@@ -4,6 +4,7 @@ let emptySection = document.getElementById('empty-section');
 let totalElements = document.getElementById('total');
 let interviewElements = document.getElementById('interview');
 let rejectedElements = document.getElementById('rejected');
+let totalJobsElements = document.getElementById("total-jobs")
 
 let allBtn = document.getElementById('all-btn');
 let interviewBtn = document.getElementById('interview-btn');
@@ -21,6 +22,7 @@ for (let card of jobsContainer.children) {
 
 function updateCounters() {
   let total = jobs.length;
+  let totalJobs = jobs.length
   let interviewCount = 0;
   let rejectedCount = 0;
 
@@ -32,8 +34,8 @@ function updateCounters() {
         rejectedCount++;
     }
   }
-
   totalElements.innerText = total;
+  totalJobsElements.innerText = totalJobs
   interviewElements.innerText = interviewCount;
   rejectedElements.innerText = rejectedCount;
 }
